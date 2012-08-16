@@ -7,7 +7,7 @@ namespace Conker.DI.Core.Infrastructure.Notifiers
 	{
 		public void Notify(User user)
 		{
-			Console.WriteLine("Hello from twitter");
+			Console.WriteLine("Sending tweet about pwd change");
 		}
 	}
 }

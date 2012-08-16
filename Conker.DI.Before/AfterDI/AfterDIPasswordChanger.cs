@@ -1,6 +1,7 @@
 using Conker.DI.Common;
 using Conker.DI.Core;
 using Conker.DI.Core.Domain;
+using Conker.DI.Core.Domain.Validators;
 using Conker.DI.Core.Infrastructure;
 
 namespace Conker.DI.Before.AfterDI

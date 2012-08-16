@@ -1,9 +1,5 @@
-﻿using System;
-using Conker.DI.Common;
-using Conker.DI.Common.Logging;
-using Conker.DI.Core;
+﻿using Conker.DI.Core;
 using Conker.DI.Core.Domain;
-using Conker.DI.Core.Infrastructure;
 using Machine.Specifications;
 using Moq;
 using It = Machine.Specifications.It;
@@ -16,9 +12,9 @@ namespace Conker.DI.Specs
 		{
 			validator = new Mock<IValidatePasswords>();
 			repository = new Mock<IUserRepository>();
-			user = new User();
 			notifier= new Mock<INotify>();
 
+			user = new User();
 			repository.Setup(m => m.Get(1)).Returns(user);
 
 			passwordChanger = new PasswordChanger(validator.Object, repository.Object, notifier.Object);
@@ -34,7 +30,7 @@ namespace Conker.DI.Specs
 			user.Password.ShouldEqual("Password1");
 
 		It should_notify_the_user_their_password_has_changed = () =>
-			notifier.Verify(m => m.Notify(user), Times.Never());
+			notifier.Verify(m => m.Notify(user));
 
 		static PasswordChanger passwordChanger;
 		static Mock<IValidatePasswords> validator;

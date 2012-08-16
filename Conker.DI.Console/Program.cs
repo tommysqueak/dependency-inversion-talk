@@ -17,14 +17,21 @@ namespace Conker.DI.ConsoleApp
 	{
 		static void Main(string[] args)
 		{
+			//var originalPwdChanger = new BeforeDIPasswordChanger();
+			//originalPwdChanger.ChangePassword(1, "administrator1");
+
+			//	Register
 			ObjectFactory.Initialize((i => i.AddRegistry<DemoRegistry>()));
 
+			//	Entry Point
 			var passwordChanger = ObjectFactory.GetInstance<PasswordChanger>();
 
 			passwordChanger.ChangePassword(1, "Password1");
 
+
 			var user = new UserRepository().Get(1);
-			Console.WriteLine("Password changed to '{0}'", user.Password);
+			Console.WriteLine();
+			Console.WriteLine("Result: Password changed to '{0}'", user.Password);
 
 			Console.ReadLine();
 		}

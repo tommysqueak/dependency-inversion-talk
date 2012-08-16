@@ -1,8 +1,6 @@
-﻿using Conker.DI.Core.Domain;
-
-namespace Conker.DI.Core.Infrastructure
+﻿namespace Conker.DI.Core.Domain
 {
-	public class UserPreferenceNotifier
+	public class UserPreferenceNotifier : INotify
 	{
 		private readonly INotify[] notifiers;
 

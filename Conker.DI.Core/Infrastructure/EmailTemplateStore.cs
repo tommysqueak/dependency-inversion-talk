@@ -4,7 +4,7 @@ namespace Conker.DI.Core.Infrastructure
 	{
 		public string BuildPlainTextMessage(string templateName)
 		{
-			return "Your password has changed! If this wasn't you, please notify support";
+			return "Sending Email about PWD change";
 		}
 	}
 }

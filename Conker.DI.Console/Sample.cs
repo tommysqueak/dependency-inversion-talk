@@ -22,8 +22,6 @@ namespace Conker.DI.ConsoleApp
 			For<ILog>().Singleton().Use<LogCollector>();
 			
 			Forward<ILog, LogCollector>();
-
-			//Scan(s => s.AddAllTypesOf<INotify>());
 		}
 	}
 }

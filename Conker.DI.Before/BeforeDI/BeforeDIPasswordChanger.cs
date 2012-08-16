@@ -1,7 +1,9 @@
 ﻿using System;
 using Conker.DI.Common;
 using Conker.DI.Common.Logging;
+using Conker.DI.Core;
 using Conker.DI.Core.Domain;
+using Conker.DI.Core.Domain.Validators;
 using Conker.DI.Core.Infrastructure;
 using Conker.DI.Core.Infrastructure.Notifiers;
 
@@ -11,7 +13,10 @@ namespace Conker.DI.Before.BeforeDI
 	{
 		public void ChangePassword(int userId, string newPassword)
 		{
-			var validator = new PasswordValidator();
+			IValidatePasswords validator = new Over6CharsPasswordValidator();
+			validator.ValidatePassword(newPassword);
+
+			validator = new ContainsLettersAndNumberPasswordValidator();
 			validator.ValidatePassword(newPassword);
 
 			var repository = new UserRepository();

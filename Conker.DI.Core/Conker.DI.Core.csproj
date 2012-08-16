@@ -44,16 +44,18 @@
   <ItemGroup>
     <Compile Include="Domain\CommunicationSettings.cs" />
     <Compile Include="Domain\User.cs" />
+    <Compile Include="Domain\Validators\ContainsLettersAndNumberPasswordValidator.cs" />
+    <Compile Include="Domain\Validators\Over6CharsPasswordValidator.cs" />
     <Compile Include="Infrastructure\UserRepository.cs" />
     <Compile Include="Infrastructure\Notifiers\EmailNotifier.cs" />
     <Compile Include="INotify.cs" />
     <Compile Include="Infrastructure\Notifiers\SmsNotifier.cs" />
-    <Compile Include="Infrastructure\PasswordValidator.cs" />
+    <Compile Include="Domain\Validators\PasswordValidator.cs" />
     <Compile Include="Infrastructure\EmailTemplateStore.cs" />
     <Compile Include="Infrastructure\SmtpServer.cs" />
-    <Compile Include="Infrastructure\Datbase.cs" />
+    <Compile Include="Infrastructure\Database.cs" />
     <Compile Include="Infrastructure\Notifiers\TwitterNotifier.cs" />
-    <Compile Include="Infrastructure\UserPreferenceNotifier.cs" />
+    <Compile Include="Domain\UserPreferenceNotifier.cs" />
     <Compile Include="Domain\IUserRepository.cs" />
     <Compile Include="IValidatePasswords.cs" />
     <Compile Include="PasswordChanger.cs" />
