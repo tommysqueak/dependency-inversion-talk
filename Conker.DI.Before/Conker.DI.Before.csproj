@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="BeforeDI\BeforeDIPasswordChanger.cs" />
     <Compile Include="BeforeSR\BeforeSRPasswordChanger.cs" />
-    <Compile Include="AfterDI\AfterDIPasswordChanger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Conker.DI.Before;
-using Conker.DI.Before.AfterDI;
-using Conker.DI.Before.BeforeDI;
-using Conker.DI.Before.BeforeSR;
 using Conker.DI.Core;
-using Conker.DI.Core.Domain;
 using Conker.DI.Core.Infrastructure;
 using StructureMap;
 
