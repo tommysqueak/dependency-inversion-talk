@@ -11,7 +11,7 @@ namespace Conker.DI.Specs
 		Establish context = () =>
 			container = new MoqAutoMocker<T>();
 
-		public T Subject
+		protected static T Subject
 		{
 			get { return container.ClassUnderTest; }
 		}

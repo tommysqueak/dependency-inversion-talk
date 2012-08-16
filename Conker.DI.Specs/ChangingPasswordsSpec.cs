@@ -39,4 +39,26 @@ namespace Conker.DI.Specs
 		private static Mock<INotify> notifier;
 	}
 
+	public class when_changing_a_valid_password_automock_version : Spec<PasswordChanger>
+	{
+		Establish context = () =>
+		{
+			user = new User();
+			Dependency<IUserRepository>().Setup(m => m.Get(1)).Returns(user);
+		};
+
+		Because of = () =>
+			 Subject.ChangePassword(1, "Password1");
+
+		It should_validate_the_password = () =>
+		   Dependency<IValidatePasswords>().Verify(m => m.ValidatePassword("Password1"));
+
+		It should_change_password = () =>
+			user.Password.ShouldEqual("Password1");
+
+		It should_notify_the_user_their_password_has_changed = () =>
+			Dependency<INotify>().Verify(m => m.Notify(user));
+
+		private static User user;
+	}
 }
