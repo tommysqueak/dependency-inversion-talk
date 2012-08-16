@@ -24,7 +24,7 @@ namespace Conker.DI.Before.BeforeSR
 
 			var message = "Your password has changed! If this wasn't you, please notify support";
 
-			SmptServer.Send(user.Email, message);
+			SmtpServer.Send(user.Email, message);
 		}
 	}
 }

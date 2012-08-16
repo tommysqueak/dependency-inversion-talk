@@ -12,6 +12,8 @@
     <AssemblyName>Conker.DI.Core</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\dependency-inversion-talk\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,12 +44,19 @@
   <ItemGroup>
     <Compile Include="Domain\CommunicationSettings.cs" />
     <Compile Include="Domain\User.cs" />
-    <Compile Include="Domain\UserRepository.cs" />
-    <Compile Include="Infrastructure\EmailNotifier.cs" />
+    <Compile Include="Infrastructure\UserRepository.cs" />
+    <Compile Include="Infrastructure\Notifiers\EmailNotifier.cs" />
+    <Compile Include="INotify.cs" />
+    <Compile Include="Infrastructure\Notifiers\SmsNotifier.cs" />
     <Compile Include="Infrastructure\PasswordValidator.cs" />
     <Compile Include="Infrastructure\EmailTemplateStore.cs" />
-    <Compile Include="Infrastructure\SmptServer.cs" />
+    <Compile Include="Infrastructure\SmtpServer.cs" />
     <Compile Include="Infrastructure\Datbase.cs" />
+    <Compile Include="Infrastructure\Notifiers\TwitterNotifier.cs" />
+    <Compile Include="Infrastructure\UserPreferenceNotifier.cs" />
+    <Compile Include="Domain\IUserRepository.cs" />
+    <Compile Include="IValidatePasswords.cs" />
+    <Compile Include="PasswordChanger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -57,6 +66,7 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

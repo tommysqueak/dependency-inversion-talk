@@ -3,6 +3,7 @@ using Conker.DI.Common;
 using Conker.DI.Common.Logging;
 using Conker.DI.Core.Domain;
 using Conker.DI.Core.Infrastructure;
+using Conker.DI.Core.Infrastructure.Notifiers;
 
 namespace Conker.DI.Before.BeforeDI
 {

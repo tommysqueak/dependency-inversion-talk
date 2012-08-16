@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Conker.DI.Common.Logging;
+using Conker.DI.Mvc.DependencyResolution;
 using StructureMap;
 using StructureMap.Configuration.DSL;
 

@@ -1,4 +1,5 @@
 ﻿using Conker.DI.Common.Logging;
+using Conker.DI.Core.Infrastructure;
 using StructureMap;
 using StructureMap.Configuration.DSL;
 
@@ -21,6 +22,8 @@ namespace Conker.DI.ConsoleApp
 			For<ILog>().Singleton().Use<LogCollector>();
 			
 			Forward<ILog, LogCollector>();
+
+			//Scan(s => s.AddAllTypesOf<INotify>());
 		}
 	}
 }

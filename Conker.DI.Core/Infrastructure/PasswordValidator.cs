@@ -1,9 +1,10 @@
 using System;
 using Conker.DI.Common;
+using Conker.DI.Core.Domain;
 
 namespace Conker.DI.Core.Infrastructure
 {
-	public class PasswordValidator
+	public class PasswordValidator : IValidatePasswords
 	{
 		public void ValidatePassword(string newPassword)
 		{

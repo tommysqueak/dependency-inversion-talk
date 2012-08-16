@@ -1,21 +1,7 @@
-using Conker.DI.Common;
 using Conker.DI.Core.Domain;
 
-namespace Conker.DI.Core.Infrastructure
+namespace Conker.DI.Core.Infrastructure.Notifiers
 {
-	public interface INotify
-	{
-		void Notify(User user);
-	}
-
-	public class SmsNotifier : INotify
-	{
-		public void Notify(User user)
-		{
-			Logger.WriteLine("Sending sms about pwd change");
-		}
-	}
-
 	public class EmailNotifier : INotify
 	{
 		readonly EmailTemplateStore templateStore;
@@ -29,7 +15,7 @@ namespace Conker.DI.Core.Infrastructure
 		{
 			var message = templateStore.BuildPlainTextMessage("PwdChanged");
 
-			SmptServer.Send(user.Email, message);
+			SmtpServer.Send(user.Email, message);
 		}
 	}
 }

@@ -11,7 +11,8 @@ namespace Conker.DI.Core.Infrastructure
 		                                 		Email = "tom@tom.com",
 		                                 		Mobile = "+44123456789",
 		                                 		Name = "Tom Philip",
-		                                 		TwitterUsername = "tommysqueak"
+		                                 		TwitterUsername = "tommysqueak",
+												Settings = new CommunicationSettings(){ContactMeByEmail = true}
 		                                 	};
 	}
 }
